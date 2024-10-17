@@ -1,0 +1,17 @@
+Package: CoffeeSurvey
+Title: Analysis of The Great American Coffee Taste Test
+Version: 0.0.0.9000
+Authors@R: 
+    person("Christy", "Lai", , "wlai0012@student.monash.edu", role = c("aut", "cre"))
+Description: This CoffeeSurvey package is created for analysis The Great American Coffee Taste Test.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
+Depends: 
+    R (>= 2.10)
+LazyData: true

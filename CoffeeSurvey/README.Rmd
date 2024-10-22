@@ -13,7 +13,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# CoffeeSurvey <img src="man/figures/coffee_logo.png" align="right" height="139" alt="" />
+# CoffeeSurvey <img src="man/figures/CoffeeSurvey.png" align="right" height="80" width="80" alt="" />
 
 CoffeeSurvey offers a comprehensive toolkit to analyze data from The Great American Coffee Taste Test. This package empowers users to explore consumer preferences, brewing methods, and price sensitivity, with seamless integration of an interactive Shiny dashboard for deeper insights.
 
@@ -66,4 +66,4 @@ The Shiny app provides interactive visualizations of:
 
 Explore trends and patterns easily with this engaging dashboard!
 
-Link to the pkgdown site is[here]()
+For more details on this package can be found on [here]().

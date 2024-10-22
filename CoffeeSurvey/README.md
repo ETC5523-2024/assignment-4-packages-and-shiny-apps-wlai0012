@@ -1,12 +1,20 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# CoffeeSurvey <img src="man/figures/CoffeeSurvey.png" align="right" height="139" alt="" />
+# CoffeeSurvey <img src="man/figures/CoffeeSurvey.png" align="right" height="80" width="80" alt="" />
 
-CoffeeSurvey provides tools to analyze the data from The Great American
-Coffee Taste Test. This package helps users explore consumer
-preferences, brewing methods, and price sensitivity, with additional
-support for launching an interactive Shiny dashboard.
+CoffeeSurvey offers a comprehensive toolkit to analyze data from The
+Great American Coffee Taste Test. This package empowers users to explore
+consumer preferences, brewing methods, and price sensitivity, with
+seamless integration of an interactive Shiny dashboard for deeper
+insights.
+
+The analysis is based on the following scenario: Imagine you are an
+analyst working for a research company. Your team is conducting this
+study to help a client develop a strategic plan for opening a new coffee
+shop. Through this analysis, the goal is to uncover key trends in coffee
+consumption and preferences, providing actionable insights for business
+decisions.
 
 ## Installation
 
@@ -30,7 +38,7 @@ After installation, load the package:
 library(CoffeeSurvey)
 ```
 
-###　Access the Dataset
+\###　Access the Dataset
 
 You can load the coffee survey dataset using:
 
@@ -61,4 +69,4 @@ The Shiny app provides interactive visualizations of:
 
 Explore trends and patterns easily with this engaging dashboard!
 
-Link to the pkgdown site is[here]()
+For more details on this package can be found on [here]().

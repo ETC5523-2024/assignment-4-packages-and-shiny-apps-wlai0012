@@ -8,3 +8,4 @@ coffee_survey <- read_csv(url) %>%
   select(prefer_overall, gender, age, where_drink, brew, most_paid)
 
 usethis::use_data(coffee_survey, overwrite = TRUE)
+

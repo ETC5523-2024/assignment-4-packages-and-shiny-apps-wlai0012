@@ -14,6 +14,107 @@ knitr::opts_chunk$set(
 )
 ```
 
+This dataset, provided by [TidyTuesday project](https://github.com/rfordatascience/tidytuesday/blob/master/data/2024/2024-05-14/readme.md), contains 4042 observations and 57 variables related to coffee consumption preferences in the U.S.
+
+## Libraries
+
+To analyze the data and create visualizations, you'll need the following libraries:
+
 ```{r setup}
+# Install the necessary packages if not already installed
+install.packages(c("CoffeeSurvey", "tidyverse", "ggplot2", "plotly", "DT"))
+
+# Load the libraries
 library(CoffeeSurvey)
+library(tidyverse)
+library(ggplot2)
+library(plotly)
+library(DT)
 ```
+
+I have filtered the dataset to focus on 6 key variables for my analysis. If you are interested in exploring the full dataset with 57 variables, you can download it directly from the TidyTuesday GitHub repository [here](https://github.com/rfordatascience/tidytuesday/blob/master/data/2024/2024-05-14/readme.md).
+
+The data can be accessed by loading "coffee_survey" or alternatively using the code "CoffeeSurvey::coffee_survey".
+
+You can use the following code to have a look on the dataset.
+
+```{r}
+data("coffee_survey")
+head(coffee_survey)
+```
+
+## Analysis Examples
+
+Below are two simple examples showing how to explore the data through a table and a plot. Feel free to further explore using similar methods.
+
+### 1. Coffee Consumption by Location
+
+This first example shows where respondents typically drink coffee (home, office, cafe, etc.).
+
+```{r}
+# Filter and calculate percentages for coffee consumption locations
+where_drink_distribution <- coffee_survey |>
+  filter(!is.na(where_drink)) |>
+  filter(where_drink %in% c("At home", "At the office", "At a cafe", "On the go")) |>
+  count(where_drink) |>
+  mutate(percentage = n / sum(n) * 100) |>
+  arrange(desc(percentage))
+```
+
+### 2. Coffee Type Preferences
+
+This second example visualizes the overall preferences for different coffee types.
+```{r table1}
+#| label: tbl-where
+#| tbl-cap: "Where do you typically drink coffee?"
+
+summary_table <- where_drink_distribution |>
+  select(
+    Location = where_drink,                  
+    `Percentage Responded` = percentage        
+  ) |>
+  mutate(`Percentage Responded` = round(`Percentage Responded`, 1)) |>  
+  arrange(desc(`Percentage Responded`))
+
+datatable(summary_table)
+```
+
+```{r}
+# Define colors for coffees
+coffee_colors <- c(
+  "Coffee A" = "#8B4513",
+  "Coffee B" = "#D2B48C",
+  "Coffee C" = "#C19A6B",
+  "Coffee D" = "#4B3832")
+
+popularity <- coffee_survey |>
+  filter(!is.na(prefer_overall)) |>
+  count(prefer_overall) |>
+  mutate(percentage = n / sum(n) * 100) |>
+  arrange(desc(n))
+
+```
+
+```{r figure 1}
+#| label: fig-bar1
+#| fig-cap: "Overall Perferences"
+
+gg1 <- ggplot(popularity, aes(x = prefer_overall, y = percentage, fill = prefer_overall)) +
+      geom_bar(stat = "identity") +
+      labs(title = "Popularity of Coffee Types",
+           x = "Coffee Type",
+           y = "Percentage of Votes") +
+      scale_fill_manual(values = coffee_colors) +
+      theme_minimal() +
+      theme(
+        plot.title = element_text(size = 16, face = "bold", hjust = 0.5),
+        axis.title.x = element_text(size = 12),
+        axis.title.y = element_text(size = 12)
+      )
+
+    ggplotly(gg1)
+```
+
+## Explore Further
+
+Feel free to explore other variables, such as brewing methods, price sensitivity, and demographic trends. If you're interested in the full dataset, you can download it from the TidyTuesday GitHub repository linked above.

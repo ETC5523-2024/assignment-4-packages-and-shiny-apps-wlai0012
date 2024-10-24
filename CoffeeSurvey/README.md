@@ -67,4 +67,5 @@ The Shiny app provides interactive visualizations of:
 
 Explore trends and patterns easily with this engaging dashboard!
 
-For more details on this package can be found on [here]().
+For more details on this package can be found on
+[here](https://etc5523-2024.github.io/assignment-4-packages-and-shiny-apps-wlai0012/).

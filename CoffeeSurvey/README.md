@@ -38,8 +38,6 @@ After installation, load the package:
 library(CoffeeSurvey)
 ```
 
-\###　Access the Dataset
-
 You can load the coffee survey dataset using:
 
 ``` r

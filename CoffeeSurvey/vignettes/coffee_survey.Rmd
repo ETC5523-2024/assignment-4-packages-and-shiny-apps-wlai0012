@@ -121,6 +121,7 @@ gg1 <- ggplot(popularity, aes(x = prefer_overall, y = percentage, fill = prefer_
 
 ggplotly(gg1)
 ```
+
 Coffee D (the experimental Colombian coffee) was the most popular choice, with 36.7% of the votes. This suggests that consumers are open to trying more unusual, fermented flavor profiles. Coffee A (light-roast Kenyan) followed closely behind with 21.7% of the votes, indicating a strong market for lighter, fruitier coffee options.
 
 ## Explore Further

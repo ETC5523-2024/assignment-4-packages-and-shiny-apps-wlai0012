@@ -80,6 +80,8 @@ summary_table <- where_drink_distribution |>
 datatable(summary_table)
 ```
 
+The majority of respondents (86.9%) reported consuming coffee at home, followed by 7.5% at the office, 3.8% at a cafe, and 1.7% while on the go, highlighting a strong preference for home-based coffee consumption.
+
 ### 2. Coffee Type Preferences
 
 This second example visualizes the overall preferences for different coffee types.
@@ -119,6 +121,7 @@ gg1 <- ggplot(popularity, aes(x = prefer_overall, y = percentage, fill = prefer_
 
 ggplotly(gg1)
 ```
+Coffee D (the experimental Colombian coffee) was the most popular choice, with 36.7% of the votes. This suggests that consumers are open to trying more unusual, fermented flavor profiles. Coffee A (light-roast Kenyan) followed closely behind with 21.7% of the votes, indicating a strong market for lighter, fruitier coffee options.
 
 ## Explore Further
 
